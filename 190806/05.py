@@ -1,5 +1,5 @@
 import sys
-sys.stdin  = open("sample_input_05.txt", "r")
+sys.stdin = open("sample_input_05.txt", "r")
 
 N = int(input())
 
@@ -26,16 +26,14 @@ for i in range(1, N+1):
             first.append(u)
     fi_list = []
     for m in range(0, len(result)):
-        if str(first[0]) in str(result[m][0]):
+        if first[0] == result[m][0]:
             fi_list.append(result[m])
-            break
+
     for m in range(0, len(result)):
         for v in range(0, len(result)):
             if fi_list[m][1] == result[v][0]:
                 fi_list.append(result[v])
-            else:
-                pass
-    print(fi_list)
+
     re_list = ''
     for l in range(0, len(fi_list)):
         for h in range(2):
