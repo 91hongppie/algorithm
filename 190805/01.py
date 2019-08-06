@@ -1,51 +1,44 @@
 import sys
 sys.stdin  = open("sample_input_01.txt", "r")
 
-result = []
-x = []
-
 for h in range(10):
     num = int(input())
     result = []
-    x = []
     for i in range(100):
-        num = input().split()
+        nums = list(map(int, input().split())
         sum_x = 0
         sum_y = 0
-        for j in num:
-            sum_x += int(j)
-            sum_y += int(num[i][j])
-        x.append(sum)
-        print(x)
+    for i in range(100):
+        for j in range(100):
 
 
 
-
-
-
-    #
-    # sum = 0
-    # for j in range(100):
-    #     sum += int(result[i][j])
-    # x.append(sum)
-    #
-    # for i in range(100):
-    #     sum = 0
-    #     for k in range(100):
-    #         sum += int(result[k][i])
-    #     x.append(sum)
-    # sum = 0
-    # for i in range(100):
-    #     sum += int(result[i][i])
-    # x.append(sum)
-    # sum = 0
-    # count = 0
-    # for i in range(99, -1, -1):
-    #     sum += int(result[count][i])
-    #     count+=1
-    # x.append(sum)
-    # max_num = 0
-    # for i in range(len(x)):
-    #     if max_num < x[i]:
-    #         max_num = x[i]
-    # print('#{} {}'.format(h+1, max_num))
+# for tc in range(1, 11):
+#     N = input()
+#     arr = [list(map(int, input().split())) for _ in range(100)]
+#
+#     ans = 0     # 최대값 저장
+#     # 행들의 합
+#     for i in range(100):
+#         S = 0
+#         for j in range(100):
+#             S += arr[i][j]
+#         ans = max(ans, S) # 가장 큰 값만 저장
+#     # 열들의 합
+#     for i in range(100):
+#         S = 0
+#         for j in range(100):
+#             S += arr[j][i]
+#         ans = max(ans, S) # 가장 큰 값만 저장
+#     # 좌상단 --> 우하단
+#     S = 0
+#     for i in range(100):
+#         S += arr[i][i]
+#     ans = max(ans, S)
+#     # 우상단 --> 좌하단
+#     S = 0
+#     for i in range(100):
+#         S += arr[i][99 - i]
+#     ans = max(ans, S)
+#
+#     print(ans)
