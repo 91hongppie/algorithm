@@ -12,9 +12,6 @@ for i in range(1, N+1):
     A_count = 0
     B_count = 0
     C = 0
-    if A == B:
-        print('#{} 0'.format(i))
-        break
     while C != A:
         if int((l + r) / 2) > A:
             r = int((l + r) / 2)
