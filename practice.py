@@ -148,4 +148,7 @@ arr = [ [9, 20, 2, 18, 11],
         [12, 13, 22, 23, 14]]
 
 x, y = len(arr), len(arr[0])
-print(x, y)
+
+for i in range(x):
+    for j in range(y):
+        
