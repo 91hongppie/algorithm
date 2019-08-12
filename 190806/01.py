@@ -4,7 +4,7 @@ sys.stdin  = open("sample_input_01.txt", "r")
 
 N = int(input())
 board = [[0]*10 for _ in range(10)]
-
+print(board)
 for i in range(1, N+1):
     count = int(input())
     board = [[0] * 10 for _ in range(10)]
@@ -17,6 +17,7 @@ for i in range(1, N+1):
                     board[x][y] = result[-1]
                 elif board[x][y] != 0 and result[-1] != board[x][y]:
                         counts += 1
+    
     print('#{} {}'.format(i, counts))
 
 
