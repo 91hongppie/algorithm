@@ -1,3 +1,7 @@
+import sys
+sys.stdin  = open("input.txt", "r")
+
+
 board=[]
 count = 0
 ans = ['0', '0', '0', '0', '0']
@@ -34,5 +38,3 @@ for i in range(5):
         if bingo >= 3:
             print(count)
             exit()
-            
-
