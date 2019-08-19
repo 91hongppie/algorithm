@@ -7,7 +7,7 @@ for i in range(1, N+1):
     area = list(map(int, input().split()))
     for k in range(area[0], area[0]+area[2]):
         for h in range(area[1], area[1]+area[3]):
-            area_list[k][h] += 1
+            area_list[k][h] = i
 j = 1
 while j < N+1:
     i = 0
