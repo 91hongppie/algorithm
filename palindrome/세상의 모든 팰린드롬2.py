@@ -7,9 +7,10 @@ for i in range(1, N+1):
         if words[j] == words[-1-j]:
             count+=1
         elif words[j] == '*' or words[-1-j] == '*':
-            count+=1
+            print('#{} Exist'.format(i))
+            break
         else:
             print('#{} Not exist'.format(i))
             break
-    if count == len(words)//2:
-        print('#{} Exist'.format(i)) 
+    else:
+        print('#{} Exist'.format(i))
