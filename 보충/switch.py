@@ -16,7 +16,7 @@ for j in range(students):
     else:
         i = num-1
         j = num-1
-        while i < tc and j >= 0:
+        while i < tc and j >= 0 and room[i] == room[j]:
             if room[i] == room[j]:
                 if room[i] == 1:
                     room[i] = 0
@@ -28,6 +28,10 @@ for j in range(students):
             j -= 1
 
 for k in range(len(room)):
-    if k > 1 and k % 20 == 0: 
-        print('\n')
-    print(room[k], end=' ')
+    if k > 0 and k % 20 == 0: 
+        print()
+        print(room[k], end=' ')
+    elif k == len(room)-1:
+        print(room[k])
+    else:
+        print(room[k], end=' ')
