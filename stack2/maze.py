@@ -28,7 +28,8 @@ for i in range(1, N+1):
             a = j
             c = maze[j].index(2)
             break
-    DFS(a, c)
+    for k in range(2):
+        DFS(a, c)
 
     print('#{} {}'.format(i, result))
 

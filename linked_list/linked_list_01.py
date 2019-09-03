@@ -40,14 +40,14 @@ def add(pre, data):
 data = [1, 2, 3, 4]
 Head = None
 
-# for i in range(len(data)):
-#     addtoLast(data[i])
-
 for i in range(len(data)):
-    addtoFirst(data[i])
+    addtoLast(data[i])
+
+# for i in range(len(data)):
+#     addtoFirst(data[i])
     
-delete(Head)
-# add(Head, 8)
+# delete(Head)
+add(Head, 8)
 
 while Head.link != None:
     print(Head.data, end='->')
