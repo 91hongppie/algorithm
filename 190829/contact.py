@@ -32,4 +32,5 @@ for i in range(1, 11):
     for u in result:
         if u[1] == result[-1][1]:
             a_result.append(u[0])
+    print(result)
     print('#{} {}'.format(i, max(a_result)))
