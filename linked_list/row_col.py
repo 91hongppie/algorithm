@@ -3,9 +3,9 @@ def BFS(table, r, c):
     row = r
     col = c
     result_row = 1
-    while table[row][col] != 0 and row < len(table):
+    while row < len(table) and row < len(table) and table[row][col] != 0:
         result_col = 1
-        while table[row][col] != 0 and col < len(table):
+        while col < len(table) and row < len(table) and table[row][col] != 0:
             table[row][col] = 0
             result_col += 1
             col += 1
@@ -30,9 +30,9 @@ for i in range(1, N+1):
         for c in range(rc):
             if table[r][c] != 0:
                 BFS(table, r, c)
-    rc_list = sorted(rc_list)
     for k in range(len(rc_list)):
         rc_list[k].insert(0, rc_list[k][0]*rc_list[k][1])
+    rc_list = sorted(rc_list)
     print('#{} {}'.format(i, len(rc_list)), end=' ')
     for y in range(len(rc_list)-1):
         print('{} {}'.format(rc_list[y][1], rc_list[y][2]), end=' ')
