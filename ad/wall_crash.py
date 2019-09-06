@@ -1,9 +1,12 @@
 import sys
 sys.stdin = open('wall_crash.txt', 'r')
+from collections import deque
+
+def BFS(s, e, cnt):
+
 
 row, col = map(int, input().split())
-room = [[] for _ in range(row)]
-for i in range(row):
-    a = list(input())
-    room[i].extend(a)
-
+room = [list(map(int, input())) for _ in range(row)]
+visit = [[False]*col for _ in range(row)]
+Q = deque()
+BFS(0, 0, 1)

@@ -1,4 +1,7 @@
-def BFS(idx, cnt):
+import sys
+sys.stdin = open('chicken.txt', 'r')
+
+def solve(idx, cnt):
     global ans
     if idx > len(chicken):
         return
@@ -13,25 +16,23 @@ def BFS(idx, cnt):
         ans = min(ans,s)
         return
     v.append(idx)
-    BFS(idx+1, cnt+1)
+    solve(idx+1, cnt+1)
     v.pop()
-    BFS(idx+1, cnt)      
+    solve(idx+1, cnt)      
         
-import sys
-sys.stdin = open('chicken.txt', 'r')
-
 rc, m = map(int, input().split())
 area = []
 for i in range(rc):
     a = list(map(int, input().split()))
+    area.append(a)
 
 chicken, home, v = [], [], [] 
-for j in range(len(area)):
-    for k in range(len(area)):
+for j in range(rc):
+    for k in range(rc):
         if area[j][k] == 2:
             chicken.append([j, k])
         elif area[j][k] == 1:
             home.append([j, k])
 ans = 10000000000
-BFS(0, 0)
+solve(0, 0)
 print(ans)
