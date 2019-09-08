@@ -1,52 +1,36 @@
 import sys
 sys.stdin = open('operator_insert.txt', 'r')
-from itertools import permutations
+def ya(u, e):
+    global max_num, min_num
+    if u == len(result)-1:
+        max_num = max(max_num, e)
+        min_num = min(min_num, e)
+    else:
+        for i in range(4):
+            if operator[i] > 0:
+                if i == 0:
+                    operator[i] -= 1
+                    ya(u+1, e+result[u+1])
+                elif i == 1:
+                    operator[i] -= 1
+                    ya(u+1, e-result[u+1])
+                elif i == 2:
+                    operator[i] -= 1
+                    ya(u+1, e*result[u+1])
+                elif i == 3:
+                    operator[i] -= 1
+                    ya(u+1, int(e/result[u+1]))
+                operator[i] += 1
+
 
 nums = int(input())
-result = list(map(str, input().split()))
+result = list(map(int, input().split()))
 operator = list(map(int, input().split()))
-operator_list = []
-for idx,k in enumerate(operator):
-    if idx == 0:
-        for y in range(k):
-            operator_list.append('+')
-    elif idx == 1:
-        for y in range(k):
-            operator_list.append('-')
-    elif idx == 2:
-        for y in range(k):
-            operator_list.append('*')
-    elif idx == 3:
-        for y in range(k):
-            operator_list.append('/')
-calc = ''
-operator_set = set()
-i = 0
-if len(operator_list) == 1:
-    calc += str(result[0])
-    calc += str(operator_list[0])
-    calc += str(result[1])
-    print(eval(calc))
-    print(eval(calc))
-else:
-    max_num = -1e10
-    min_num = 1e10
-    for j in permutations(operator_list, len(operator_list)):
-        operator_set.add(j)
-        i += 1
-    for u in range(len(operator_set)):
-        result_operator = ''
-        j = operator_set.pop()
-        for ho in range(len(result)):
-            result_operator += result[ho]
-            if ho != 0:
-                result_operator = str(int(eval(result_operator)))
-            if ho < len(j):
-                result_operator += j[ho] 
-        max_num = max(max_num, int(result_operator))
-        min_num = min(min_num, int(result_operator))
-    print(max_num)
-    print(min_num)
+max_num = -1e10
+min_num = 1e10
+ya(0, result[0])
+print(max_num, min_num)
+
 
 
 
