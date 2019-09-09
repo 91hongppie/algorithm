@@ -32,7 +32,7 @@ while count != T:
     room[top[0]-1][top[1]] = 0
     while i != top:
         if i[0] == top[0]:
-            if top[1]+1 < i[1]: 
+            if top[1]+1 < i[1]:
                 room[i[0]][i[1]] = room[i[0]][i[1]-1]
             i[1] -= 1
         elif i[1] == col-1:
@@ -45,13 +45,12 @@ while count != T:
             room[i[0]][i[1]] = room[i[0]][i[1]+1]
             i[1] += 1
     room[top[0]][top[1]+1] = 0
-    
 
     j = [bottom[0]+1, bottom[1]]
     room[bottom[0]+1][bottom[1]] = 0
     while j != bottom:
         if j[0] == bottom[0]:
-            if bottom[1]+1 < j[1]: 
+            if bottom[1]+1 < j[1]:
                 room[j[0]][j[1]] = room[j[0]][j[1]-1]
             j[1] -= 1
         elif j[1] == col-1:
@@ -67,13 +66,6 @@ while count != T:
     count += 1
 sum = 0
 for k in range(row):
-    print(room[k])
     for y in range(0, col):
         sum += room[k][y]
 print(sum+2)
-
-
-
-
-
-            
