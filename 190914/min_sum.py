@@ -1,5 +1,8 @@
-import sys; sys.stdin = open('sample_min_sum.txt', 'r')
 from collections import deque
+import sys
+sys.stdin = open('sample_min_sum.txt', 'r')
+
+
 def BFS(r, c, cnt):
     global distance
     Q.append([r, c, cnt])
@@ -19,8 +22,6 @@ def BFS(r, c, cnt):
                     Q.append([a1, b1, c+room[a1][b1]])
                 else:
                     continue
-            
-
 
 
 N = int(input())
@@ -31,4 +32,5 @@ for tc in range(1, N+1):
     room = [list(map(int, input().split())) for _ in range(rc)]
     distance = [[0]*rc for _ in range(rc)]
     BFS(0, 0, room[0][0])
+    print(distance)
     print('#{} {}'.format(tc, distance[rc-1][rc-1]))
