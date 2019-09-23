@@ -1,6 +1,6 @@
 import sys
+sys.setrecursionlimit(10**8)
 sys.stdin = open('RGB.txt', 'r')
-sys.setrecursionlimit(10**9)
 
 
 def DFS(r, c, col):
@@ -35,7 +35,6 @@ def DFS1(r, c, col):
                     if board[x1][y1] == col:
                         visit1[x1][y1] = True
                         DFS1(x1, y1, col)
-
 
 
 N = int(input())
