@@ -1,6 +1,6 @@
 import sys
 sys.stdin = open('hide_n_seek.txt', 'r')
-
+sys.setrecursionlimit(10**6)
 
 def hide(b, s, cnt):
     global result
@@ -8,11 +8,12 @@ def hide(b, s, cnt):
         return
     if b == s:
         result = min(result, cnt)
-    elif b < s:
-        hide(b+2*cnt+1, s, cnt+1)
-        hide(b+1, s, cnt+1)
-    elif b > s:
-        hide(b-1, s, cnt+1)
+        return
+    if b < s:
+        hide(2*b, s, cnt+1)
+    hide(b-1, s, cnt+1)
+    hide(b+1, s, cnt+1)
+
 
 
 subin, sister = map(int, input().split())
