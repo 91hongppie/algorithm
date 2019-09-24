@@ -1,25 +1,51 @@
 import sys
 sys.stdin = open('NnM1.txt', 'r')
 
-    
+
 def comb(e, n):
-    global result
-    if n == nums:
-        q = sorted(result)
-        if q not in a:
-            a.append(q)
-            print(*q)
-        return
+    global pr, result
+    if n == nums-1:
+        print(*result)
     else:
-        for i in range(1, num+1):
-            result.append(i)
-            comb(e+1, n+1)
-            result.pop()
+        if e == 1:
+            q = -1
+            for i in range(num):
+                if e == i:
+                    continue
+                if q == num_list[i]:
+                    continue
+                else:
+                    q = num_list[i]
+                    result.append(num_list[i])
+                    comb(i, n+1)
+                    result.pop()
+        else:
+            q = -1
+            for i in range(num):
+                if e == i:
+                    continue
+                if q == num_list[i]:
+                    continue
+                else:
+                    q = num_list[i]
+                    result.append(num_list[i])
+                    comb(i, n+1)
+                    result.pop()
 
 
 num, nums = map(int, input().split())
-a = []
+num_list = list(map(int, input().split()))
 result = []
-comb(0, 0)
-
-
+pr = []
+num_list.sort()
+q = -1
+for j in range(num):
+    if q == num_list[j]:
+        continue
+    else:
+        q = num_list[j]
+        result.append(num_list[j])
+        comb(j, 0)
+        result.pop()
+for k in pr:
+    print(*k)
