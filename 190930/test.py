@@ -17,10 +17,14 @@ N = int(input())
 for tc in range(1, N+1):
     nums = int(input())
     scores = list(map(int, input().split()))
-    result = [0]
+    result = [0]*(sum(scores)+1)
+    result[0] = 1
+    u = 0
     for i in range(len(scores)):
-        for j in range(len(result)):
-            if result[j]+scores[i] not in result:
-                result.append(result[j]+scores[i])
-    print(result)
-    print('#{} {}'.format(tc, len(result)))
+        for j in range(sum(scores), -1, -1):
+            u += 1
+            if result[j]:
+                result[scores[i]+j] = 1
+    a = result.count(1)
+    print(u)
+    print('#{} {}'.format(tc, a))
