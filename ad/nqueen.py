@@ -3,8 +3,8 @@ sys.stdin = open('sample_nqueen.txt', 'r')
 
 
 def chess(s, e, arr):
-    for y in range(rc)
-       if 1 not in board[s]:
+    for y in range(rc):
+        if 1 not in board[s]:
             for u in range(rc):
                 if board[u][e] == 1:
                     break
